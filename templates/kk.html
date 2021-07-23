@@ -1,0 +1,20 @@
+<head>
+<style>
+body {
+  background-image: url('https://images7.alphacoders.com/480/thumb-1920-480440.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+</style>
+</head>
+
+<p style="color:white"> this is what users have been searching</p>
+<table border="1">
+  {% for use in user %}
+  <tr>
+    <td style="color:white">{{use[0]}}</td>
+      <td style="color:white">{{use[1]}}</td>
+    </tr>
+    {% endfor %}
+    </table>
