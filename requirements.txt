@@ -4,3 +4,4 @@ Flask_MySQLdb==0.2.0
 numpy==1.21.1
 IMDbPY==2021.4.18
 scikit_learn==0.24.2
+gunicorn==19.10.0
