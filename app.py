@@ -78,6 +78,26 @@ def freedom(listo):
     rrr.append(rr[9])
 
     return rrr
+def back(text):
+    import imdb
+    from imdb import IMDb
+    movies_db=imdb.IMDb()
+
+    movies=movies_db.search_movie(text)
+    xx=[]
+    id=movies[0].getID()
+    mov=movies_db.get_movie(id)
+    title=mov['title']
+    casting=mov['cast']
+    xx.append(title)
+    for i in range(5):
+        xx.append(casting[i])
+
+    mo=movies_db.search_movie(text)
+    for i in range(5):
+        xx.append(mo[i])
+
+    return(xx)
 
 @app.route('/')
 def my_form():
@@ -91,6 +111,12 @@ def my_form_post():
     tota=results(tot[5])
     to=freedom(tota)
     return render_template('sne.html',movie=tot,mo=to)
+
+@app.errorhandler(500)
+def internal_error(error):
+    text = request.form['text']
+    tot=back(text)
+    return render_template('sjjs.html',movie=tot),500
 
 
 
