@@ -116,7 +116,7 @@ def my_form_post():
 def internal_error(error):
     text = request.form['text']
     tot=back(text)
-    return render_template('sjjs.html',movie=tot),500
+    return render_template('sne.html',movie=tot),500
 
 
 
